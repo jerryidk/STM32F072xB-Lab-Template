@@ -52,9 +52,10 @@ void SysTick_Handler(void)
 {
     if (tick == 0xffffffff){
       tick = 0;
-    } 
+    } else{
+      tick++;
+    }
 
-    tick++;
     NVIC_ClearPendingIRQ(SysTick_IRQn);
 }
 

@@ -14,6 +14,8 @@
 #define GREENLED (9)
  
 
+extern volatile uint32_t tick;
+
 /**
  * Basic support.
 */
@@ -31,19 +33,10 @@ void HSI48_EN(void)
 
 }
 
-extern volatile uint32_t tick;
-
-// t in miliseconds
 void DELAY(int t)
 {
-  int start = tick;
-  while (tick - start < t)
-  {
-    if (tick > start && (tick - start >= t))
-      break;
-    if (tick < start && (start - tick >= t))
-      break;
-  }
+  uint32_t start = tick;
+  while (tick - start < t);
 }
 
 #endif

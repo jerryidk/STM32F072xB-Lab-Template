@@ -4,7 +4,7 @@ TARGET = main
 LD_SCRIPT = STM32F072.ld
 MCU_SPEC  = cortex-m0
 
-# Toolchain definitions (ARM bare metal defaults)
+# TODO, replace your gcc toolchain for embedded system
 TOOLCHAIN = /usr
 CC = $(TOOLCHAIN)/bin/arm-none-eabi-gcc
 AS = $(TOOLCHAIN)/bin/arm-none-eabi-as
@@ -47,7 +47,7 @@ $(TARGET).bin: $(TARGET).elf
 	$(OS) $<
 
 flash: $(TARGET).bin
-	st-flash write $(TARGET).bin 0x8000000 #0x8000000 is the entry point
+	st-flash write $(TARGET).bin 0x8000000 
 
 clean:
 	rm -f $(OBJS)

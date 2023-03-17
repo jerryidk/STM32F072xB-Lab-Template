@@ -42,3 +42,6 @@ run ```gdb ``` then type
 - ```target remote localhost:<PORT> ```
 - ``` symbol-file <path_to_executable> ```
 
+## Troubleshoot
+
+Check for your user permission to USB port. You can add sudo onto all st commands too. 

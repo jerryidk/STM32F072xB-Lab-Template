@@ -10,7 +10,7 @@
 int main(void)
 { 
   // Enable system clock to be 1ms per tick
-  SysTick_Config(8000); 
+  SysTick_Config(1000); 
 
   // Never returns 
   while(1);
